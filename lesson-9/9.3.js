@@ -37,14 +37,17 @@ app.use(express.json());
 
 /* ========== app.get() ========== */
 
-app.get("/", (req, res) => {
-  res.send("This is the HOME page.");
-  console.log(req.query);
-});
-
-app.get("/contact", (req, res) => {
-  res.send("This is the CONTACT page.");
-});
+app
+  .get("/", (req, res) => {
+      res.send("This is the HOME page.");
+      console.log(req.query);
+  })
+  .get("/about", (req, res) => {
+    res.send("This is the About page.");
+  })
+  .get("/contact", (req, res) => {
+    res.send("This is the CONTACT page.");
+  });
 
 /**
  * Listing 9.2 (p. 145)
